@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: patient-service
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${JWT_ISSUER_URI}
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS}
